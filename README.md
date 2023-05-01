@@ -48,3 +48,5 @@ Led, which is activated when fire is detected.
 
 The values, taken by the sensors, are sended to the Cloud via LoRaWAN.
 
+## Architecture
+![Circuit1](https://github.com/RicGobs/Fire-Alarm-System/blob/main/circuit.png) <br/>
