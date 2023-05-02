@@ -40,6 +40,8 @@ The specifications of the flame sensor include the following:
 * The detection angle is from 0 to 60 degrees
 * Operating temperature ranges from -25℃ to 85℃
 * The size of PCB is 3cm X 1.6cm
+* you can detect Infrared Light up to a distance of 100cm within its 60 degrees of detection angle
+* While capable of detecting fires and explosions within 3–4 milliseconds, a time delay of 2–3 seconds is often included to minimize false alarms which can be triggered by other UV sources such as lightning, arc welding, radiation, and sunlight
 
 ## Actuators
 Two type of actuators are used:
@@ -48,5 +50,10 @@ Led, which is activated when fire is detected.
 
 The values, taken by the sensors, are sended to the Cloud via LoRaWAN.
 
+## Battery
+I am trying to understand which are the consumption of the system. In general the firefighting devices work between 3 and 10 years. Due to the difficulty placement of my system, the device should work for 10 years.
+
 ## Architecture
 ![Circuit1](https://github.com/RicGobs/Fire-Alarm-System/blob/main/circuit.png) <br/>
+
+
