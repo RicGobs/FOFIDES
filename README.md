@@ -73,7 +73,7 @@ This module consists of an NTC thermistor, an LM393 dual differential comparator
 * Board Dimensions : 15mm x 36mm
 
 Calibration of the sensor, using the DHT11.
-<img src="https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/temp-calibration.png" width="440" height="320"> <br>
+<img src="https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/temp-calibration.jpg" width="440" height="320"> <br>
 <img src="https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/dht11-temp.png" width="440" height="320"> <br>
 
 ### Infrared Flame Sensor
