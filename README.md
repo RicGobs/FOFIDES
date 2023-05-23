@@ -23,9 +23,15 @@ Common causes for wildfires include:
 * Prescribed fires
 However, sometimes Wildfires do sometimes occur naturally, either ignited by the sun's heat or a lightning strike.
 
+![fire-percentage](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/fire-percentage.png)
+
 Most fires have historically occurred between May and October. However, recent data has shown that the season is lengthening, with wildfires starting earlier in the year and lasting well into the fall and winter months.
 
+![fire-season](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/fire-season.png)
+
 Some ecosystems were hit harder by nighttime activity than others. For instance, nighttime fire detections were dominant in temperate evergreen forests, where 38 percent of fire detections occurred at night.
+
+![fire-region](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/fire-region.jpeg)
 
 Wildfires spread at an average of 14.27 miles per hour.
 
@@ -36,6 +42,8 @@ Daily analysis???????
 ## Actual forest fire system
 The Copernicus Emergency Management Services is the fire forest system used in Europe. Similar to the other active fire maps, the European Forest Fire Information System (EFFIS) uses MODIS and VIIRS to track thermal anomalies. As part of their current situation viewer, it assesses the burnt area of the forest fire with a polygon extent. Also, it provides an analysis of seasonal trends and the number of fires by European Union countries. For fire prevention managers, this platform forecasts fire danger levels based on meteorological predictions. The program cost €5,421 billion (2021-2027), Copernicus (io non lo metterei). Copernicus initial operations began in 2011. Copernicus became fully operational in 2014.  
 
+![fire-map](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/fire-map.png)
+
 Values taht I will compare:
 * 22 m resolution imagery over very large areas for the 2nd generation of this type of satellites, the first generation is in space from 2002 to 2009 (only 32 m) and it lived for 7 years
 * Near real-time detection of fire, but it is not declared specifically
@@ -45,31 +53,27 @@ Also Google Earth Pro and NASA’s Worldview and FIRMS.
 They use Photo-interpretation, Semi-automatic extraction, Automatic extraction and Modelling.
 These ones detect active fire data within three hours of satellite observation.
 
-## My of the problem
+## Board
 
-
+![esp32](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/esp32.png)
 
 ## Sensors
 Two different type of sensors are used:
- DHT11;
- Infrared Flame sensor;
- //and MQ9 sensor,to monitor CO level.
+* KY-028, temperature sensor module
+* KY-026, infrared flame sensor
+* MQ9 sensor, CO detector
 
-### DHT11 Sensor
-The DHT11 is used to monitor temperature and relative humidity; the values of temperature and humidity are periodicaly sent to the Cloud.
-According to the manufacturer's datasheet, the temperature range measured by the sensor is 0-50°C with an accuracy of ±2°C. The humidity range is 20-90% RH with an accuracy of ±5% RH. The unit of temperature measurement is Celsius (°C), and the unit for humidity measurement is percentage (%). The desired periodicity of measurements can be set by the user and depends on the application's requirements. However, the datasheet suggests a minimum time interval of 2 seconds between consecutive measurements to ensure accurate readings.
-In general:
-* 3 to 5V power and I/O
-* 2.5mA max current use during conversion (while requesting data)
-* Good for 20-80% humidity readings with 5% accuracy
-* Good for 0-50 °C temperature readings +-2 °C accuracy
-* No more than 1 Hz sampling rate (once every second)
-* Body size 15.5mm x 12mm x 5.5mm
-* 3 pins with 0.1" spacing
-* Adafruit Learning Documentation for DHTxx Sensors
-* RoHS compliant
+### KY-028, temperature sensor module
+
+![esp32](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/esp32.png)
+
+Calibration of the sensor, using the DHT11.
+
+![dht11-temp](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/dht11-temp.png)
 
 ### Infrared Flame Sensor
+
+![esp32](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/esp32.png)
 Infrared Flame sensor is used to monitor light intensity; the values of light intensity, equal to detection of fire, are periodicaly sent to the Cloud.
 This sensor is available in small size and is used to detect a source of fire or any other clear light source. Basically, this kind of sensor detects infrared light with 760 nm to 1100 nm range wavelength that is generated from the light source or fire or flame. This IR flame sensor includes a YG1006 Phototransistor sensor which has high sensitivity & high speed.
 The specifications of the flame sensor include the following:
@@ -98,16 +102,21 @@ The values, taken by the sensors, are sended to the Cloud via LoRaWAN.
 I am trying to understand which are the consumption of the system. In general the firefighting devices work between 3 and 10 years. Due to the difficulty placement of my system, the device should work for 10 years.
 
 ## Circuit
-![Circuit1](https://github.com/RicGobs/Fire-Alarm-System/blob/main/circuit.png) <br/>
 
 ## Architecture
 Wildfires spread at an average of 14.27 miles per hour. However, this can vary hugely depending on a number of factors, such as weather conditions, fuel type, and terrain.
 23 km/h worst case conditions. 6,38889 m/s. When is already big.
-
-The detection distance of the flame of lighter is 100 cm.
-
 My test are done with the lighter so I will use this distance.
+
+![angle](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/angle.png)
 
 I have thought an height of 1.73 but it is too much, fire too big.
 
+![scale1](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/scale1.png)
+
+The detection distance of the flame of lighter is 100 cm.
+
+![scale2](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/scale2.png)
+
+In the end, I have scaled the architecture.
 
