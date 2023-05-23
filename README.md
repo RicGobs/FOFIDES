@@ -69,11 +69,11 @@ Two different type of sensors are used:
 
 Calibration of the sensor, using the DHT11.
 
-![dht11-temp](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/dht11-temp.jpeg)
+<img src="https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/dht11-temp.png" width="100" height="100">
 
 ### Infrared Flame Sensor
 
-![flame](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/flame.png)
+![flame](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/flame.jpeg)
 Infrared Flame sensor is used to monitor light intensity; the values of light intensity, equal to detection of fire, are periodicaly sent to the Cloud.
 This sensor is available in small size and is used to detect a source of fire or any other clear light source. Basically, this kind of sensor detects infrared light with 760 nm to 1100 nm range wavelength that is generated from the light source or fire or flame. This IR flame sensor includes a YG1006 Phototransistor sensor which has high sensitivity & high speed.
 The specifications of the flame sensor include the following:
@@ -92,7 +92,7 @@ The specifications of the flame sensor include the following:
 * While capable of detecting fires and explosions within 3–4 milliseconds, a time delay of 2–3 seconds is often included to minimize false alarms which can be triggered by other UV sources such as lightning, arc welding, radiation, and sunlight
 
 ### MQ7 Sensor
-![mq7](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/mq7.jpg | width=100)
+<img src="https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/mq7.jpg" width="100" height="100">
 
 ## Actuators
 Two type of actuators are used:
