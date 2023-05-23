@@ -65,11 +65,11 @@ Two different type of sensors are used:
 
 ### KY-028, temperature sensor module
 
-![temp](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/temp.png)
+![temp](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/temp.jpeg)
 
 Calibration of the sensor, using the DHT11.
 
-![dht11-temp](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/dht11-temp.png)
+![dht11-temp](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/dht11-temp.jpeg)
 
 ### Infrared Flame Sensor
 
@@ -92,7 +92,7 @@ The specifications of the flame sensor include the following:
 * While capable of detecting fires and explosions within 3–4 milliseconds, a time delay of 2–3 seconds is often included to minimize false alarms which can be triggered by other UV sources such as lightning, arc welding, radiation, and sunlight
 
 ### MQ7 Sensor
-![mq7](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/mq7.jpg)
+![mq7](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/mq7.jpg | width=100)
 
 ## Actuators
 Two type of actuators are used:
