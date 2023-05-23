@@ -17,13 +17,12 @@ High temperatures and low humidity also dry out fuel sources, causing them to ig
 Common causes for wildfires include:
 * Arson
 * Campfires 
-![fire-percentage](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/fire-percentage.png) 
 * Discarding lit cigarettes
 * Improperly burning debris
 * Playing with matches or fireworks
 * Prescribed fires
 However, sometimes Wildfires do sometimes occur naturally, either ignited by the sun's heat or a lightning strike.
-
+![fire-percentage](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/fire-percentage.png) 
 
 Most fires have historically occurred between May and October. However, recent data has shown that the season is lengthening, with wildfires starting earlier in the year and lasting well into the fall and winter months.
 
@@ -64,8 +63,13 @@ Two different type of sensors are used:
 * MQ7 sensor, CO detector
 
 ### KY-028, temperature sensor module
-
 ![temp](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/temp.jpeg) <br>
+The KY-028 Digital Temperature Sensor measures temperature changes based on thermistor resistance. This module has both digital and analog outputs, there’s a potentiometer to adjust the detection threshold on the digital interface.
+This module consists of an NTC thermistor, an LM393 dual differential comparator, a 3296W trimmer potentiometer, 6 resistors, 2 LEDs, and 4 male header pins. The module features analog and digital outputs.
+* Operating Voltage :	3.3V ~ 5.5V
+* Temperature Measurement Range :	-55°C to 125°C
+* Measurement Accuracy :	±0.5°C
+* Board Dimensions : 15mm x 36mm
 
 Calibration of the sensor, using the DHT11.
 
