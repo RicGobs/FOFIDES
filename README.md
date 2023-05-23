@@ -61,6 +61,7 @@ Two different type of sensors are used:
 * KY-028, temperature sensor module
 * KY-026, infrared flame sensor
 * MQ7 sensor, CO detector
+The values, taken by the sensors, are sended to the Cloud via LoRaWAN.
 
 ### KY-028, temperature sensor module
 ![temp](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/temp.jpeg) <br>
@@ -108,10 +109,8 @@ Carbon Monoxide Gas Sensor MQ-7 detects the concentrations of CO in the air and 
 
 ## Actuators
 Two type of actuators are used:
-Buzzer, which is activated when fire is detected;
-Led, which is activated when fire is detected.
-
-The values, taken by the sensors, are sended to the Cloud via LoRaWAN.
+* Buzzer (passive buzzer), which is activated when fire is detected;
+* Led, which is activated when fire is detected.
 
 ## Battery
 I am trying to understand which are the consumption of the system. In general the firefighting devices work between 3 and 10 years. Due to the difficulty placement of my system, the device should work for 10 years.
