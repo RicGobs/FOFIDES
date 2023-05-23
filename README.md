@@ -22,7 +22,7 @@ Common causes for wildfires include:
 * Playing with matches or fireworks
 * Prescribed fires
 However, sometimes Wildfires do sometimes occur naturally, either ignited by the sun's heat or a lightning strike.
-![fire-percentage](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/fire-percentage.png) 
+![wildfires](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/wildfires.png) 
 
 Most fires have historically occurred between May and October. However, recent data has shown that the season is lengthening, with wildfires starting earlier in the year and lasting well into the fall and winter months.
 
@@ -72,7 +72,7 @@ This module consists of an NTC thermistor, an LM393 dual differential comparator
 * Board Dimensions : 15mm x 36mm
 
 Calibration of the sensor, using the DHT11.
-
+<img src="https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/temp-calibration.png" width="440" height="320"> <br>
 <img src="https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/dht11-temp.png" width="440" height="320"> <br>
 
 ### Infrared Flame Sensor
@@ -97,6 +97,14 @@ The specifications of the flame sensor include the following:
 
 ### MQ7 Sensor
 <img src="https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/mq7.jpg" width="150" height="120"> <br>
+Carbon Monoxide Gas Sensor MQ-7 detects the concentrations of CO in the air and ouputs its reading as an analog voltage. The sensor can measure concentrations of 10 to 10,000 ppm.The sensor can operate at temperatures from -10 to 50°C and consumes less than 150 mA at 5 V.
+* Detection Gas: Carbon Monoxide
+* Concentration: 10-10000ppm
+* Supply Voltage: <10V
+* Heater Voltage: 5.0V ± 0.2V
+* Load Resistance: Adjustable
+* Heater Resistance: 31Ω ± 3Ω
+* Heater Consumption: <350mW
 
 ## Actuators
 Two type of actuators are used:
