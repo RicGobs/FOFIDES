@@ -16,22 +16,22 @@ High temperatures and low humidity also dry out fuel sources, causing them to ig
 
 Common causes for wildfires include:
 * Arson
-* Campfires
+* Campfires 
+![fire-percentage](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/fire-percentage.png) 
 * Discarding lit cigarettes
 * Improperly burning debris
 * Playing with matches or fireworks
 * Prescribed fires
 However, sometimes Wildfires do sometimes occur naturally, either ignited by the sun's heat or a lightning strike.
 
-![fire-percentage](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/fire-percentage.png)
 
 Most fires have historically occurred between May and October. However, recent data has shown that the season is lengthening, with wildfires starting earlier in the year and lasting well into the fall and winter months.
 
-![fire-season](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/fire-season.png)
+![fire-season](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/fire-season.png) <br>
 
 Some ecosystems were hit harder by nighttime activity than others. For instance, nighttime fire detections were dominant in temperate evergreen forests, where 38 percent of fire detections occurred at night.
 
-![fire-region](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/fire-region.jpeg)
+![fire-region](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/fire-region.jpeg) <br>
 
 Wildfires spread at an average of 14.27 miles per hour.
 
@@ -42,7 +42,7 @@ Daily analysis???????
 ## Actual forest fire system
 The Copernicus Emergency Management Services is the fire forest system used in Europe. Similar to the other active fire maps, the European Forest Fire Information System (EFFIS) uses MODIS and VIIRS to track thermal anomalies. As part of their current situation viewer, it assesses the burnt area of the forest fire with a polygon extent. Also, it provides an analysis of seasonal trends and the number of fires by European Union countries. For fire prevention managers, this platform forecasts fire danger levels based on meteorological predictions. The program cost €5,421 billion (2021-2027), Copernicus (io non lo metterei). Copernicus initial operations began in 2011. Copernicus became fully operational in 2014.  
 
-![fire-map](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/fire-map.png)
+![fire-map](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/fire-map.png) <br>
 
 Values taht I will compare:
 * 22 m resolution imagery over very large areas for the 2nd generation of this type of satellites, the first generation is in space from 2002 to 2009 (only 32 m) and it lived for 7 years
@@ -55,7 +55,7 @@ These ones detect active fire data within three hours of satellite observation.
 
 ## Board
 
-![esp32](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/esp32.png)
+![esp32](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/esp32.png) <br>
 
 ## Sensors
 Two different type of sensors are used:
@@ -65,15 +65,15 @@ Two different type of sensors are used:
 
 ### KY-028, temperature sensor module
 
-![temp](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/temp.jpeg)
+![temp](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/temp.jpeg) <br>
 
 Calibration of the sensor, using the DHT11.
 
-<img src="https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/dht11-temp.png" width="400" height="300">
+<img src="https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/dht11-temp.png" width="440" height="320"> <br>
 
 ### Infrared Flame Sensor
 
-![flame](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/flame.jpeg)
+![flame](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/flame.jpeg) <br>
 Infrared Flame sensor is used to monitor light intensity; the values of light intensity, equal to detection of fire, are periodicaly sent to the Cloud.
 This sensor is available in small size and is used to detect a source of fire or any other clear light source. Basically, this kind of sensor detects infrared light with 760 nm to 1100 nm range wavelength that is generated from the light source or fire or flame. This IR flame sensor includes a YG1006 Phototransistor sensor which has high sensitivity & high speed.
 The specifications of the flame sensor include the following:
@@ -92,7 +92,7 @@ The specifications of the flame sensor include the following:
 * While capable of detecting fires and explosions within 3–4 milliseconds, a time delay of 2–3 seconds is often included to minimize false alarms which can be triggered by other UV sources such as lightning, arc welding, radiation, and sunlight
 
 ### MQ7 Sensor
-<img src="https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/mq7.jpg" width="150" height="120">
+<img src="https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/mq7.jpg" width="150" height="120"> <br>
 
 ## Actuators
 Two type of actuators are used:
