@@ -69,7 +69,7 @@ Two different type of sensors are used:
 
 Calibration of the sensor, using the DHT11.
 
-<img src="https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/dht11-temp.png" width="100" height="100">
+<img src="https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/dht11-temp.png" width="400" height="300">
 
 ### Infrared Flame Sensor
 
@@ -92,7 +92,7 @@ The specifications of the flame sensor include the following:
 * While capable of detecting fires and explosions within 3–4 milliseconds, a time delay of 2–3 seconds is often included to minimize false alarms which can be triggered by other UV sources such as lightning, arc welding, radiation, and sunlight
 
 ### MQ7 Sensor
-<img src="https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/mq7.jpg" width="100" height="100">
+<img src="https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/mq7.jpg" width="150" height="120">
 
 ## Actuators
 Two type of actuators are used:
