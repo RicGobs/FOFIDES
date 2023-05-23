@@ -61,11 +61,11 @@ These ones detect active fire data within three hours of satellite observation.
 Two different type of sensors are used:
 * KY-028, temperature sensor module
 * KY-026, infrared flame sensor
-* MQ9 sensor, CO detector
+* MQ7 sensor, CO detector
 
 ### KY-028, temperature sensor module
 
-![esp32](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/esp32.png)
+![temp](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/temp.png)
 
 Calibration of the sensor, using the DHT11.
 
@@ -73,7 +73,7 @@ Calibration of the sensor, using the DHT11.
 
 ### Infrared Flame Sensor
 
-![esp32](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/esp32.png)
+![flame](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/flame.png)
 Infrared Flame sensor is used to monitor light intensity; the values of light intensity, equal to detection of fire, are periodicaly sent to the Cloud.
 This sensor is available in small size and is used to detect a source of fire or any other clear light source. Basically, this kind of sensor detects infrared light with 760 nm to 1100 nm range wavelength that is generated from the light source or fire or flame. This IR flame sensor includes a YG1006 Phototransistor sensor which has high sensitivity & high speed.
 The specifications of the flame sensor include the following:
@@ -90,6 +90,9 @@ The specifications of the flame sensor include the following:
 * The size of PCB is 3cm X 1.6cm
 * you can detect Infrared Light up to a distance of 100cm within its 60 degrees of detection angle
 * While capable of detecting fires and explosions within 3–4 milliseconds, a time delay of 2–3 seconds is often included to minimize false alarms which can be triggered by other UV sources such as lightning, arc welding, radiation, and sunlight
+
+### MQ7 Sensor
+![mq7](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/mq7.jpg)
 
 ## Actuators
 Two type of actuators are used:
