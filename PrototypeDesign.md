@@ -89,16 +89,3 @@ The AWS architecture above shows the network design. In detail, data are generat
 The website shows the data sent to AWS, in particular it tells what happens during the actual fire showing graphs about Flame, Carbon Monoxide and Temp. There are also some aggregated data like Average, Min and Max of all the data. Here it is a demonstration of website content:
 
 This is the link of the website: https://dev.d1x7cd5qytqbni.amplifyapp.com/ 
-
-
-# Prototype Evaluation
-
-* you can detect Infrared Light up to a distance of 100cm within its 60 degrees of detection angle
-
-Calibration of the sensor, using the DHT11. <br>
-<img src="https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/temp-calibration.jpg" width="440" height="320"> <br>
-<img src="https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/dht11-temp.png" width="440" height="320"> <br>
-
-
-### Battery
-I am trying to understand which are the consumption of the system. In general the firefighting devices work between 3 and 10 years. Due to the difficulty placement of my system, the device should work for 10 years.
