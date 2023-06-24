@@ -2,7 +2,7 @@
 
 ## Prototype
 
-![presentation](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/presentation.png) <br>
+![presentation](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/presentation.JPG) <br>
 
 ## Introduction
 Forest fires pose a significant danger to both human settlements and forest ecosystems worldwide, with their occurrence largely linked to human activities. While many plants and animals need and benefit from wildfires, climate change has left some ecosystems more susceptible to flames. Warmer temperatures have intensified drought and dried out forests.
