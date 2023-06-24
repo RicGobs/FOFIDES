@@ -17,7 +17,7 @@ Our infrastructure is composed of:
 * Button, to stop the alarm
 
 ### Esp32 Sensor Board 
-<img src="https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/esp32_heltec.png" width="160" height="130"> <br>
+<img src="https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/esp32_heltec_lora.png" width="160" height="130"> <br>
 
 Here there is the **Esp32-heltec-lora32-v2**. <br>
 
