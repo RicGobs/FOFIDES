@@ -44,10 +44,6 @@ However, sometimes Wildfires do sometimes occur naturally, either ignited by the
 
 ![wildfires](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/wildfires.png) <br>
 
-Most fires have historically occurred between May and October. However, recent data has shown that the season is lengthening, with wildfires starting earlier in the year and lasting well into the fall and winter months. 
-
-![fire-season](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/fire-season.png) <br>
-
 Some ecosystems were hit harder by nighttime activity than others. For instance, nighttime fire detections were dominant in temperate evergreen forests, where 38 percent of fire detections occurred at night. 
 
 ![fire-region](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/fire-region.jpeg) <br>
