@@ -17,25 +17,21 @@ Our infrastructure is composed of:
 * Button, to stop the alarm
 
 ### Sensor Board 
-![esp32_heltec](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/esp32_heltec1.png) <br>
-<img src="https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/esp32_heltec1.png" width="155" height="125"> <br>
+<img src="https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/esp32_heltec1.png" width="160" height="130"> <br>
 
 Here there is the **Esp32-heltec-lora32-v2**. <br>
 
 Sensor Board: it does the samplings (detecting possible fires), using KY-028 (temperature sensor module), KY-026 (infrared flame sensor) and MQ7 sensor (CO detector).
 
 ### Actuator Board
-![esp32_wroom](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/esp32_wroom.jpeg) <br>
-
-<img src="https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/esp32_wroom.jpeg" width="155" height="125"> <br>
+<img src="https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/esp32_wroom.jpeg" width="160" height="130"> <br>
 
 Here there is the **Esp32-wroom-32** . It is possible to use another Esp32-heltec-lora32-v2 if you want. <br>
 
 Actuator Board: it receives the alert of fire and starts the alarm, using Buzzer and Led; it is possible to stop the alarm using a Button.
 
 ### KY-028, temperature sensor module
-![temp](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/temp.jpeg) <br>
-<img src="https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/temp.jpeg" width="155" height="125"> <br>
+<img src="https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/temp.jpeg" width="160" height="130"> <br>
 The KY-028 Digital Temperature Sensor measures temperature changes based on thermistor resistance. This module has both digital and analog outputs, there’s a potentiometer to adjust the detection threshold on the digital interface. This module consists of an NTC thermistor, an LM393 dual differential comparator, a 3296W trimmer potentiometer, 6 resistors, 2 LEDs, and 4 male header pins.
 The specifications of the flame sensor include the following:
 * Operating Voltage : 3.3V to 5.5V
@@ -45,9 +41,7 @@ The specifications of the flame sensor include the following:
 * The output type is Digital o/p or Digital & Analog output <br>
 
 ### Infrared Flame Sensor
-![flame](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/flame.jpeg) <br>
-
-<img src="https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/flame.jpeg" width="155" height="125"> <br>
+<img src="https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/flame.jpeg" width="160" height="130"> <br>
 
 Infrared Flame sensor is used to monitor light intensity; the values of light intensity, equal to detection of fire, are periodicaly sent to the Cloud.
 This sensor is available in small size and is used to detect a source of fire or any other clear light source. Basically, this kind of sensor detects infrared light with 760 nm to 1100 nm range wavelength that is generated from the light source or fire or flame. This IR flame sensor includes a YG1006 Phototransistor sensor which has high sensitivity & high speed.
@@ -63,7 +57,7 @@ The specifications of the flame sensor include the following:
 * Operating temperature ranges: -25℃ to 85℃
 
 ### MQ7 Sensor
-<img src="https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/mq7.jpg" width="155" height="125"> <br>
+<img src="https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/mq7.jpg" width="160" height="130"> <br>
 Carbon Monoxide Gas Sensor MQ-7 detects the concentrations of CO in the air and ouputs its reading as an analog voltage. The sensor can measure concentrations of 10 to 10,000 ppm.The sensor can operate at temperatures from -10 to 50°C and consumes less than 150 mA at 5 V.
 The specifications of the flame sensor include the following:
 * Detection Gas: Carbon Monoxide
