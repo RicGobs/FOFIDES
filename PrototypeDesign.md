@@ -16,14 +16,14 @@ Our infrastructure is composed of:
 * Led, which is activated when fire is detected
 * Button, to stop the alarm
 
-### Sensor Board 
-<img src="https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/esp32_heltec1.png" width="160" height="130"> <br>
+### Esp32 Sensor Board 
+<img src="https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/esp32_heltec.png" width="160" height="130"> <br>
 
 Here there is the **Esp32-heltec-lora32-v2**. <br>
 
 Sensor Board: it does the samplings (detecting possible fires), using KY-028 (temperature sensor module), KY-026 (infrared flame sensor) and MQ7 sensor (CO detector).
 
-### Actuator Board
+### Esp32 Actuator Board
 <img src="https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/esp32_wroom.jpeg" width="160" height="130"> <br>
 
 Here there is the **Esp32-wroom-32** . It is possible to use another Esp32-heltec-lora32-v2 if you want. <br>
@@ -70,9 +70,9 @@ The specifications of the flame sensor include the following:
 
 ## Circuit
 There are two different circuits for the system, one for the actuator board and one for the sensor board.
-### Actuator Board
+### Circuit Actuator Board
 ![esp32_wroom](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/board_actuator.png) <br>
-### Sensor Board
+### Circuit Sensor Board
 ![esp32_wroom](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/board_sensor.png) <br>
 
 ## Network Architecture
