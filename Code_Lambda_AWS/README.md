@@ -1,4 +1,4 @@
-# FOFISET Prototype - Lambda AWS code
+# FOFIDES Prototype - Lambda AWS code
 
 ## Introduction
 In this directory there is the code for the Lambda AWS, this has to be executed in the AWS Environment. <br/>
