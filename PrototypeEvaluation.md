@@ -51,7 +51,7 @@ For the temperature sensor (KY-028) I have done some test to convert the analog 
 #### Temperature Sensor KY-028 Calibration
 The first idea, to calibrate the sensor, was about using the DHT11. This approach did not work well because the DHT11 used was not so accurate.
 
-<img src="https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/temp-calibration.jpg" width="440" height="320"> <br>
+<img src="https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/temp-calibration.jpg" width="440" height="320">
 <img src="https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/dht11-temp.png" width="440" height="320"> <br>
 
 So, I have used a more naive approach using a thermometer. 
