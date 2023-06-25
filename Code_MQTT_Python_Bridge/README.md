@@ -7,5 +7,4 @@ In this directory there is the code for the MQTT Bridge, this has to be executed
 Firstly, you have to download mosquitto, go to the site and follow the instructions:  [Link Here](https://github.com/eclipse/mosquitto) 
 
 Secondly, you have to connect your computer and AWS following this guide: [Link Here](https://aws.amazon.com/it/blogs/iot/how-to-bridge-mosquitto-mqtt-broker-to-aws-iot/). 
-To have more informations about AWS, go to the Directory Code_Lambda_AWS.
 
