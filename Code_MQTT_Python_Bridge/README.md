@@ -1,4 +1,4 @@
-# FOFISET Prototype - MQTT code
+# FOFIDES Prototype - MQTT code
 
 ## Introduction
 In this directory there is the code for the MQTT Bridge, this has to be executed in the device that you want to use as bridge for AWS. <br/>
