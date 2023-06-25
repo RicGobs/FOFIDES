@@ -1,4 +1,4 @@
-# FOFISET Prototype - RIOT code
+# FOFIDES Prototype - RIOT code
 
 ## Introduction
 In this directory there is the RIOT code for the prototype. Before to do this tutorial, do the actions explained in the directory of Code_MQTT_Python_Bridge.
