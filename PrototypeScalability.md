@@ -14,7 +14,7 @@ It is possible to scale the schema with more nodes. In the future the system, du
  
 A problem of this infrastructure is that with more nodes, it would be intelligent to create a cluster environment, in which the father of the cluster uses LoRa while the other elements of the cluster use a short range communication protocol (like Bluetooth-Low-Energy, BLE).
 
-![scalable](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/scalable.png) <br>
+![scalable](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/scalable3.png) <br>
 
 Here a possible scenario of fire detection.
 
