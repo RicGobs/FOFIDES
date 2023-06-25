@@ -70,7 +70,7 @@ My test are done with the lighter so I will use the distance obtained by these t
 
 The detection distance of the flame of lighter is 100 cm if there is a fire around the sensor, while it is higher (up to 2 m) if it is up the sensor. 
 
-![angle](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/angle.png) <br>
+![angle](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/angle1.png) <br>
 
 So I will use the lower value to create the infrastructure. If a sensor covers a circle of diameter = 1 m, It is needed a device each 2 m.
 There will be a small area in which there is not a proper coverage, but it is not relevant thankfull to the redundancy of the system and the size of this uncover area.
