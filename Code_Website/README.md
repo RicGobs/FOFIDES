@@ -1,4 +1,4 @@
-# FOFISET Prototype - Website code
+# FOFIDES Prototype - Website code
 
 ## Introduction
 In this directory there is the code for the Website, this has to be put in the AWS Environment. <br/>
