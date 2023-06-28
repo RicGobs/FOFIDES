@@ -90,7 +90,7 @@ To obtain the energy performance of the Sensor Board it is needed to analyse the
 * mex AWS consumption, not significant
 * mex Alarm consumption, not significant
 
-$$E_{tot} =  KY-028 comsumption + Flame consumption + MQ7 consumption + esp32 consumption in ActiveMode + esp32 consumption in DeepSleepMode $$
+$$E_{tot} =  KY028comsumption + FlameConsumption + MQ7consumption + ActivemodeConsumption + DeepSleepModeConsumption $$
 
 $$E_{tot} =  0.075 W \cdot ActiveMode + 0.075 W \cdot ActiveMode + 0.150 W \cdot ActiveMode + 0.9 W \cdot Time ActiveMode + 0.000050 W \cdot Time DeepSleepMode$$
 
