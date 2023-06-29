@@ -49,30 +49,16 @@ For the project I have tested the different sensors to set a correct threshold.
 For the temperature sensor (KY-028) I have done some test to convert the analog input in a temperature value (in °C). Secondly, For the flame sensor I have done tests for the sensivity to the flame. Finally, for the MQ7 I have translated the input analog in a ppm value. 
 
 #### Temperature Sensor KY-028 Calibration
+The first idea, to calibrate the sensor, was about using the DHT11. This approach did not work well because the DHT11 used was not so accurate.
 
-![calibration](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/temp-calibration.jpg) <br>
+<img src="https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/temp-calibration.jpg" width="440" height="320">
+<img src="https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/dht11-temp.png" width="440" height="320"> <br>
 
-The first idea, to calibrate the sensor, was about using the DHT11. In the image below, there is the temperature detected by dht11 in the white window, while there is temperature of the KY-028 not already calibrated in the black window.
+So, I have used a more naive approach using a thermometer. 
 
-![calibration](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/dht11-temp.png) <br>
-
-I have done another test using a thermometer, to be sure that the DHT11 Sensor has correctly and accuratly taken the temperature. I have not directly used the DHT11 for the project cause of some problems between RIOT and the Sensor. In the following image, the KY-028 has been calibrated.
-
-![calibration](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/calibration_temp.png) <br>
-
-With this approach I has been able to calibrate quite well the temperature sensor. In particular I have fixed the temperature for the different duty cycles said before:
-* high risk - more than 35°C
-* middle risk - between 20°C and 35°C
-* low risk - less than 20°C
+IMMAGINE TEMP SENSOR E THERMOMETER
 
 #### Infrared Flame Sensor Calibration
-I have also done some tests for the Infrared Flame Sensor, to control if and how works. Below there is an image to show the value received in a situation of NO-FLAME. <br>
-
-![no](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/noflame.png) <br>
-
-Here, on the contrary, there is an image to show the value received in a situation of YES-FLAME. It is also possible to see that the temperature sensor is sensible to the flame, indeed the temperature is increase than before. <br>
-
-![yes](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/yesflame.png) <br>
 
 #### MQ7 Sensor Calibration
 
@@ -91,6 +77,33 @@ There will be a small area in which there is not a proper coverage, but it is no
 
 ![scale1](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/scale1.png) <br>
 
+
+### Payload
+This is a typical payload {"flame":"0","co":"359","temp":"22"}. In this case, the total volume will be of about 41 Bytes.
+
+It is possible to reduce this. A possible solution is {"f":"0","c":"359","t": "22"}. In this second case, the payload will be of about 33 Bytes.
+
+The worst case is when there is always an high risk. In this situation, there is a possible message of 33 Bytes every 5 minutes. So, in the worst case, there are 288 messages per day. Finally, 9504 Bytes (approx 10000 Bytes) are sent to AWS.
+
+This holds both for the MQTT Protocol and the LoRa Protocol.
+
+### Latency with MQTT Protocol
+The end-to-end latency for data collection using MQTT can be summarized as follows:
+
+* Thing to MQTT Bridge (MQTT Protocol): the latency here is about 1-2 seconds
+* MQTT Bridge to AWS IoT-Core: the latency in this stage is about 1-2 seconds
+* AWS IoT-Core to Website: here the latency is about 3-4 seconds
+
+So, on average, the latency is about 8 seconds.
+
+### Latency with LoRa Protocol
+The end-to-end latency for data collection using LoRa is defined by:
+
+* Thing to TTN (LoRa Protocol): the latency in this stage is about 2-3 seconds
+* TTN to AWS IoT-Core: here the latency is about 2-3 seconds
+* AWS IoT-Core to Website: the latency here is about 3-4 seconds
+
+So, on average, the latency is about 10 seconds.
 
 ### Energy Performance with MQTT Protocol
 In this paragraph, there is the energy performance of only the Sensor Board which will be connected to a battery. The Actuator Board is connected via cables and also it consumes more or less depending on how many alarms there are.
