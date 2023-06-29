@@ -49,19 +49,21 @@ For the project I have tested the different sensors to set a correct threshold.
 For the temperature sensor (KY-028) I have done some test to convert the analog input in a temperature value (in °C). Secondly, For the flame sensor I have done tests for the sensivity to the flame. Finally, for the MQ7 I have translated the input analog in a ppm value. 
 
 #### Temperature Sensor KY-028 Calibration
-The first idea, to calibrate the sensor, was about using the DHT11. This approach did not work well because the DHT11 used was not so accurate.
 
-<img src="https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/temp-calibration.jpg" width="440" height="320">
-<img src="https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/dht11-temp.png" width="440" height="320"> <br>
+![calibration](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/temp-calibration.jpg) <br>
 
-So, I have used a more naive approach using a thermometer. 
+The first idea, to calibrate the sensor, was about using the DHT11. 
+
+![calibration](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/dht11-temp.png) <br>
+
+I have done another test using a thermometer, to be sure that the DHT11 Sensor has correctly and accuratly taken the temperature. I have not directly used the DHT11 for the project cause of some problems between RIOT and the Sensor.
 
 ![calibration](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/calibration_temp.png) <br>
 
 With this approach I has been able to calibrate quite well the temperature sensor. In particular I have fixed the temperature for the different duty cycles said before:
 * high risk - more than 35°C
 * middle risk - between 20°C and 35°C
-* low risk = less than 20°C
+* low risk - less than 20°C
 
 #### Infrared Flame Sensor Calibration
 
