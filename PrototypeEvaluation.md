@@ -78,34 +78,92 @@ There will be a small area in which there is not a proper coverage, but it is no
 ![scale1](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/scale1.png) <br>
 
 
-### Energy Performance
+### Energy Performance with MQTT Protocol
 In this paragraph, there is the energy performance of only the Sensor Board which will be connected to a battery. The Actuator Board is connected via cables and also it consumes more or less depending on how many alarms there are.
 
 To obtain the energy performance of the Sensor Board it is needed to analyse the consumptions of the different parts of the system:
-* KY-028 (temperature sensor): 5 V - 15mA
-* Infrared Flame sensor: 5 V - 15 mA
-* MQ7 sensor: 5 V - 150 mA
-* Esp32 in active mode: 5 V - 180 mA
-* Esp32 in deep sleep mode: 5V - 10µA
-* mex AWS consumption, not significant
-* mex Alarm consumption, not significant
+* KY-028 (temperature sensor): 5 V - 15mA = 0.075 W
+* Infrared Flame sensor: 5 V - 15 mA = 0.075 W
+* MQ7 sensor: 5 V - 150 mA = 0.75 W
+* Esp32 in active mode: 5 V - 180 mA = 0.9 W
+* Esp32 Heltec in deep sleep mode: 5V - 800µA = 0.004 W
+* mex AWS consumption, counted in the Active mode
+* mex Alarm consumption, counted in the Active mode
 
 $$E_{tot} =  KY028comsumption + FlameConsumption + MQ7consumption + ActivemodeConsumption + DeepSleepModeConsumption $$
 
-$$E_{tot} =  0.075 W \cdot ActiveMode + 0.075 W \cdot ActiveMode + 0.150 W \cdot ActiveMode + 0.9 W \cdot Time ActiveMode + 0.000050 W \cdot Time DeepSleepMode$$
+$$E_{tot} =  0.075 W \cdot TimeActiveMode + 0.075 W \cdot TimeActiveMode + 0.750 W \cdot TimeActiveMode + 0.9 W \cdot Time ActiveMode + 0.004 W \cdot Time DeepSleepMode$$
 
 It is important to analyse the system in the worst case scenario, so it always wakes up every 5 minute: it does 288 samplings per day.
 
 On average it takes 3 seconds to do the test, so 864 sec (0,24 h) in active mode and 85536 (23.76 h) sec in deep sleep mode.
 
-$$E_{tot} daily =  0.075 W \cdot 0,24 h + 0.075 W \cdot 0,24 h + 0.150 W \cdot 0,24 h + 0.9 W \cdot 0,24 h + 0.000050 W \cdot 23.76 h $$ 
+$$E_{tot} daily =  0.075 W \cdot 0,24 h + 0.075 W \cdot 0,24 h + 0.750 W \cdot 0,24 h + 0.9 W \cdot 0,24 h + 0.004 W \cdot 23.76 h $$ 
 
-$$E_{tot} daily =  0.018 Wh + 0.018 Wh + 0.036 Wh + 0.216 Wh + 0.00188 Wh = 0.289 Wh $$ 
+$$E_{tot} daily =  0.018 Wh + 0.018 Wh + 0.18 Wh + 0.216 Wh + 0.095 Wh = 0.527 Wh $$ 
 
 So, 0.289 Wh is the consumption per day of the system. It is interesting to understand for how much time it can survive. 
 
-$$E_{tot} monthly = 0.289 Wh \cdot 30 days = 8.68 Wh $$ 
+$$E_{tot} monthly = 0.527 Wh \cdot 30 days = 15.81 Wh $$ 
 
-In conclusion, the system can works for a month with a battery of 2500 mAh. Due to the three sensors it uses and the Wi-Fi connection, it is highly energy consuming. To be used in larger environments, it is necessary to improve the energy efficiency. 
 
-The energy efficiency of the system can be improved using LoRa protocol (instead of MQTT and Wi-Fi) for the communication between nodes and with AWS.In particular it is possible to reduce the esp32 consumption in ActiveMode.
+But in the datasheet of [ESP32 Series](https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf), the Deep Sleep Mode is less, in particular it  is 0.00075 W. So we do again the operations:
+
+$$E_{tot} daily =  0.018 Wh + 0.018 Wh + 0.18 Wh + 0.216 Wh + 0.00075 W \cdot 23.76 h = 0.449 Wh $$
+
+$$E_{tot} monthly = 0.383 Wh \cdot 30 days = 13.47 Wh $$ 
+
+In conclusion, also with this other deep sleep, due to the three sensors it uses and the Wi-Fi connection, the system is highly energy consuming. To be used in larger environments, it is necessary to improve the energy efficiency. 
+
+The energy efficiency of the system can be improved using LoRa protocol (instead of MQTT and Wi-Fi) for the communication between nodes and with AWS.In particular it is possible to reduce the Esp32 consumption in ActiveMode.
+
+### Energy Performance with LoRa Protocol
+
+To obtain the energy performance of the Sensor Board it is needed to analyse the consumptions of the different parts of the system. The consumption of the sensors remain the same:
+* KY-028 (temperature sensor): 5 V - 15mA = 0.075 W 
+* Infrared Flame sensor: 5 V - 15 mA = 0.075 W 
+* MQ7 sensor: 5 V - 150 mA = 0.750 W 
+
+Also the time is the same:
+* 864 sec (0,24 h) in active mode
+* 85536 (23.76 h) sec in deep sleep mode
+
+Meanwhile the consumption of the Esp32 is diffent. To understand what is the consumption of the board, it is useful the Energy Monitoring of Iot-Lab. Indeed the images below shows the consumption:<br>
+
+This is the consumption of the board in a situation in which is not sleeping and is not doing anything. The segmented lines are the rumors of the test. The peak is the flash of the firmware.
+
+![normal](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/normal.png) <br>
+
+This is the consumption of the sleep mode. It is the same of the Active Mode. This means that it is not implemented the Deep Sleep. We will implemented so the Deep Sleep in the future calculus.
+
+![sleep](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/sleep.png) <br>
+
+This is the consumption of the sending of a LoRa message.
+
+![sending](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/sending.png) <br>
+
+This is the consumption of the sending of more LoRa messages. There will be this situation only when there is a fire.
+
+![more_sending](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/more_sending.png) <br>
+
+Using the graph above it is possible to say:
+* Esp32 sending: 0.455 W 
+* Esp32 in deep sleep mode: 0.00075 W (Sleep of Iot-lab is not implementing Deep Sleep Mode)
+* Esp32 in ActiveMode: 0.28 W
+* The listening situation is not needed due to the system implementation
+
+So we do again the operations, using the lowest deep sleep possible:
+
+$$TimeSending = (0.17 - 0.080) s = 0.090 s = 2.5 \cdot 10^{-5} h$$
+
+$$E_{tot} =  KY028comsumption + FlameConsumption + MQ7consumption + ActivemodeConsumption + DeepSleepModeConsumption + MessageConsumption$$
+
+$$E_{tot} daily =  0.075 W \cdot 0,24 h + 0.075 W \cdot 0,24 h + 0.750 \cdot 0,24 h + 0.28 W \cdot 0,24 h + 0.00075 W \cdot 23.76 h + 0.455 W \cdot 2.5 \cdot 10^{-5} h $$ 
+
+$$E_{tot} daily =  0.018 Wh + 0.018 Wh + 0.18 Wh + 0.0672 Wh + 0.0178 Wh + 1.14 \cdot 10^{-5} Wh = 0.28 Wh $$ 
+
+So, 0.28 Wh is the consumption per day of the system. Again it is interesting to understand for how much time it can survive. 
+
+$$E_{tot} monthly = 0.28 Wh \cdot 30 days = 8.4 Wh $$ 
+
+The conclusion is that the bottleneck is the MQ7 Sensor which is extremely energy demanding.
