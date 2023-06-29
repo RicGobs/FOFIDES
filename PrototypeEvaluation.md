@@ -52,11 +52,11 @@ For the temperature sensor (KY-028) I have done some test to convert the analog 
 
 ![calibration](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/temp-calibration.jpg) <br>
 
-The first idea, to calibrate the sensor, was about using the DHT11. 
+The first idea, to calibrate the sensor, was about using the DHT11. In the image below, there is the temperature detected by dht11 in the white window, while there is temperature of the KY-028 not already calibrated in the black window.
 
 ![calibration](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/dht11-temp.png) <br>
 
-I have done another test using a thermometer, to be sure that the DHT11 Sensor has correctly and accuratly taken the temperature. I have not directly used the DHT11 for the project cause of some problems between RIOT and the Sensor.
+I have done another test using a thermometer, to be sure that the DHT11 Sensor has correctly and accuratly taken the temperature. I have not directly used the DHT11 for the project cause of some problems between RIOT and the Sensor. In the following image, the KY-028 has been calibrated.
 
 ![calibration](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/calibration_temp.png) <br>
 
@@ -66,6 +66,13 @@ With this approach I has been able to calibrate quite well the temperature senso
 * low risk - less than 20°C
 
 #### Infrared Flame Sensor Calibration
+I have also done some tests for the Infrared Flame Sensor, to control if and how works. Below there is an image to show the value received in a situation of NO-FLAME. <br>
+
+![no](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/noflame.png) <br>
+
+Here, on the contrary, there is an image to show the value received in a situation of YES-FLAME. It is also possible to see that the temperature sensor is sensible to the flame, indeed the temperature is increase than before. <br>
+
+![yes](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/yesflame.png) <br>
 
 #### MQ7 Sensor Calibration
 
