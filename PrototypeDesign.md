@@ -58,10 +58,10 @@ The specifications of the flame sensor include the following:
 
 ### MQ7 Sensor
 <img src="https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/mq7.jpg" width="160" height="130"> <br>
-Carbon Monoxide Gas Sensor MQ-7 detects the concentrations of CO in the air and ouputs its reading as an analog voltage. The sensor can measure concentrations of 20 to 2,000 ppm.The sensor can operate at temperatures from -10 to 50°C and consumes less than 150 mA at 5 V.
+Carbon Monoxide Gas Sensor MQ-7 detects the concentrations of CO in the air and ouputs its reading as an analog voltage. The sensor can measure concentrations of 10 to 10,000 ppm.The sensor can operate at temperatures from -10 to 50°C and consumes less than 150 mA at 5 V.
 The specifications of the flame sensor include the following:
 * Detection Gas: Carbon Monoxide
-* Concentration: 20-2000ppm
+* Concentration: 10-10000ppm
 * Supply Voltage: < 10V
 * Heater Voltage: 5.0V ± 0.2V
 * Load Resistance: Adjustable
@@ -83,9 +83,15 @@ The network architecture is focused on checking the actual state of the fire det
 The AWS architecture above shows the network design with MQTT Protocol. In detail, data are generated from the prototype and sent to AWS through a MQTT-Bridge, that is a my personal computer. Meanwhile, always using MQTT, Sensor Board sends a message to Actuator Board, which starts the alarm (the alarm can be stopped with a Button). With a proper AWS Lambda function and an IoT-Rule, the data sent to AWS from the MQTT-Bridge are stored in two NoSQL DB. With another Lambda function, data are retrieved form DBs and associated to an API deployed with AWS API Gateway. The website frontend, taken data dynamically from API endpoint, has been deployed with AWS Amplify. 
 
 ## Network Architecture for Prototype with LoRa Protocol
+In a second part of the project I have worked with LoRa, which will be the protocol that I will use also in the future development of the project.
+LoRa is a suitable technology for different reasons:
+* It uses low bandwidth. In fact, I need to exchange simple data
+* It can send data on long ranges. It is needed to allow the scalability of the project
+* It works with low power consumption, and this is a crucial added value since the project is based on a battery-powered approach
+
 The network architecture is focused on checking the actual state of the fire detection system.
 
-![net_arch](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/lora_ttn_aws.png) <br>
+![net_arch](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/ttn_architecture.png) <br>
 
 The AWS architecture above shows the network design with LoRa Protocol. In detail, data are generated from the prototype and sent to AWS through The Things Network, that is the LoRa Gateway. 
 
