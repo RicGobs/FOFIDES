@@ -14,7 +14,8 @@ There are some explanations:
 * A small **Introduction** to the problem and the current situation (below)
 
 There are also the codes:
-* **Code_Device Directory**, with all the code for the esp32
+* **Code_Device_MQTT Directory**, with all the RIOT code for the Esp32 with MQTT Protocol
+* **Code_Device_Lorawan Directory**, with all the RIOT code with LoRa Protocol
 * **Code_Lambda_AWS Directory**, with all the code for the lambda functions
 * **Code_MQTT_Python_Bridge Directory**, with the script for creating a MQTT Bridge
 * **Images Directory**, with all the images
