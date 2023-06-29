@@ -75,12 +75,23 @@ There are two different circuits for the system, one for the actuator board and 
 ### Circuit Sensor Board
 ![esp32_wroom](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/board_sensor.png) <br>
 
-## Network Architecture
+## Network Architecture for Prototype with MQTT Protocol
 The network architecture is focused on checking the actual state of the fire detection system.
 
 ![net_arch](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/Network_Architecture.png) <br>
 
-The AWS architecture above shows the network design. In detail, data are generated from the prototype and sent to AWS through a MQTT-Bridge, that is a my personal computer. Meanwhile, always using MQTT, Sensor Board sends a message to Actuator Board, which starts the alarm (the alarm can be stopped with a Button). With a proper AWS Lambda function and an IoT-Rule, the data sent to AWS from the MQTT-Bridge are stored in two NoSQL DB. With another Lambda function, data are retrieved form DBs and associated to an API deployed with AWS API Gateway. The website frontend, taken data dynamically from API endpoint, has been deployed with AWS Amplify. 
+The AWS architecture above shows the network design with MQTT Protocol. In detail, data are generated from the prototype and sent to AWS through a MQTT-Bridge, that is a my personal computer. Meanwhile, always using MQTT, Sensor Board sends a message to Actuator Board, which starts the alarm (the alarm can be stopped with a Button). With a proper AWS Lambda function and an IoT-Rule, the data sent to AWS from the MQTT-Bridge are stored in two NoSQL DB. With another Lambda function, data are retrieved form DBs and associated to an API deployed with AWS API Gateway. The website frontend, taken data dynamically from API endpoint, has been deployed with AWS Amplify. 
+
+## Network Architecture for Prototype with LoRa Protocol
+The network architecture is focused on checking the actual state of the fire detection system.
+
+![net_arch](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/ttn_architecture.png) <br>
+
+The AWS architecture above shows the network design with LoRa Protocol. In detail, data are generated from the prototype and sent to AWS through The Things Network, that is the LoRa Gateway. 
+
+In this part I have not already implemented the sending to the Actuator, because in my system the second Esp32, that I own, has not the Antenna LoRa. To solve this issue, you can change the Lambda function that takes the data from TTN adding a mqtt publish to the topic in which the Actuator is subscribed. 
+
+Then, as before, with a proper AWS Lambda function and an IoT-Rule, the data sent to AWS from TTN are stored in two NoSQL DB. With another Lambda function, data are retrieved form DBs and associated to an API deployed with AWS API Gateway. The website frontend, taken data dynamically from API endpoint, has been deployed with AWS Amplify. 
 
 ## Website Page
 ![website1](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/website1.png) <br>
