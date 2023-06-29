@@ -1,15 +1,15 @@
 #include <string.h>
-#include <stdbool.h>
 #include "timex.h"
 #include "xtimer.h"
 #include "ztimer.h"
 #include "paho_mqtt.h"
 #include "MQTTClient.h"
-#include "stdio.h"
 #include "periph/gpio.h"
 #include "periph/adc.h"
 #include "thread.h"
 #include "analog_util.h"
+#include <stdbool.h>
+#include "stdio.h"
 
 int BOARD = 0; // 0->sensor 1->actuator
 
@@ -24,6 +24,9 @@ int BOARD = 0; // 0->sensor 1->actuator
 
 gpio_t BUTTON_PIN = GPIO_PIN(0, 16);
 #define BUTTON_PIN_NUMBER 16
+
+//char stack_pub[THREAD_STACKSIZE_MAIN];
+//kernel_pid_t thread_pub;
 
 char stack_led[THREAD_STACKSIZE_MAIN];
 kernel_pid_t thread_led;
@@ -48,10 +51,9 @@ xtimer_ticks32_t diff_time;
 #define DAILY_TIME 86400*US_PER_SEC //time of a day -> 60*60*24*US_PER_SEC
 
 #define HIGH_RISK_PERIODIC 5*US_PER_SEC
-#define MIDDLE_RISK_PERIODIC 10*US_PER_SEC
-#define SMALL_RISK_PERIODIC 60*US_PER_SEC
+#define MIDDLE_RISK_PERIODIC 7*US_PER_SEC
+#define SMALL_RISK_PERIODIC 10*US_PER_SEC
 
-//When Wi-Fi drivers are enabled ADC2 cannot be used. Only 8 channels of ADC1 can be used.
 //mosquitto_sub -h 192.168.177.168 -p 1883 -t "mytopic"
 //sudo BOARD=esp32-heltec-lora32-v2 BUILD_IN_DOCKER=1 DOCKER="sudo docker" PORT=/dev/ttyUSB0 make flash term
 
@@ -73,11 +75,17 @@ xtimer_ticks32_t diff_time;
 #define DEFAULT_MQTT_PWD                ""
 #endif
 
+/**
+ * @brief Default MQTT port
+ */
 #define DEFAULT_MQTT_PORT               1883
 #define DEFAULT_IP                      "192.168.177.168"
 #define DEFAULT_TOPIC                   "mytopic"
 #define DEFAULT_TOPIC_AWS               "home"
 
+/**
+ * @brief Keepalive timeout in seconds
+ */
 #define DEFAULT_KEEPALIVE_SEC           10
 
 #ifndef MAX_LEN_TOPIC
@@ -292,7 +300,7 @@ int main(void)
 
     MQTTStartTask(&client);
 
-    xtimer_sleep(2);
+    xtimer_sleep(3);
 
     connect();
     
@@ -386,11 +394,12 @@ int main(void)
             xtimer_sleep(1);
             sample_temp = adc_sample(TEMP_PIN,ADC_RES_TEMP);
             
-            flame_sensor = adc_util_map(sample_fire, ADC_RES_FIRE, 85, -25);
-            co_sensor = adc_util_map(sample_co, ADC_RES_CO, 10, 10000);
+            
+            flame_sensor = adc_util_map(sample_fire, ADC_RES_FIRE, 100, 0);
+            co_sensor = adc_util_map(sample_co, ADC_RES_CO, 20, 2000);
             temp_sensor = adc_util_map(sample_temp, ADC_RES_TEMP, 125, -55);
-
-            if(flame_sensor>=50 && co_sensor>=2000){ //sistemare threshold
+            
+            if(flame_sensor>=90 || co_sensor>=400){ //sistemare threshold
                 printf("\nFIRE --- FIRE --- FIRE\n");
                 printf("Raw FLAME %i, value FLAME: %i \t Raw CO %i, value CO: %i \t Raw TEMP %i, value TEMP: %i \n", sample_fire, flame_sensor, sample_co, co_sensor, sample_temp, temp_sensor);
                 
@@ -425,10 +434,10 @@ int main(void)
                 last_time = xtimer_now();
             }
 
-            if (temp_sensor < 30){
+            if (temp_sensor < 20){
                 xtimer_periodic_wakeup(&periodic_time, SMALL_RISK_PERIODIC);
             }  
-            else if (temp_sensor < 70){
+            else if (temp_sensor < 35){
                 xtimer_periodic_wakeup(&periodic_time, MIDDLE_RISK_PERIODIC);
             }  
             else{
@@ -455,8 +464,3 @@ int main(void)
     return 0;
 
 }
-
-
-
-
-    
