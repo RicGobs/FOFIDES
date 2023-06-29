@@ -91,7 +91,7 @@ LoRa is a suitable technology for different reasons:
 
 The network architecture is focused on checking the actual state of the fire detection system.
 
-![net_arch](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/ttn_architecture.png) <br>
+![net_arch](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/lora_ttn_aws.png) <br>
 
 The AWS architecture above shows the network design with LoRa Protocol. In detail, data are generated from the prototype and sent to AWS through The Things Network, that is the LoRa Gateway. 
 
