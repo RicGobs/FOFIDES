@@ -56,7 +56,12 @@ The first idea, to calibrate the sensor, was about using the DHT11. This approac
 
 So, I have used a more naive approach using a thermometer. 
 
-IMMAGINE TEMP SENSOR E THERMOMETER
+![calibration](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/calibration_temp.png) <br>
+
+With this approach I has been able to calibrate quite well the temperature sensor. In particular I have fixed the temperature for the different duty cycles said before:
+* high risk - more than 35°C
+* middle risk - between 20°C and 35°C
+* low risk = less than 20°C
 
 #### Infrared Flame Sensor Calibration
 
