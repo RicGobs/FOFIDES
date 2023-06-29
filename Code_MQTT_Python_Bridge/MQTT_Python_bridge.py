@@ -60,23 +60,23 @@ def disconnect_clients(signum, frame):
 signal.signal(signal.SIGINT, disconnect_clients)
 
 # MQTT broker settings
-MQTT_BROKER_ADDR = "192.168.177.168"
+MQTT_BROKER_ADDR = ""
 MQTT_BROKER_PORT = 1883
 MQTT_BROKER_CLIENT_ID = "broker"
 
 # AWS IoT settings
-AWS_IOT_ENDPOINT ="a1qrujr4l90wwz-ats.iot.us-east-1.amazonaws.com"
+AWS_IOT_ENDPOINT =""
 AWS_IOT_PORT = 8883
-AWS_IOT_CLIENT_ID = "basicPubSub"
+AWS_IOT_CLIENT_ID = ""
 
 # Set the relative path to the AWS IoT Root CA file
-AWS_IOT_ROOT_CA = "./root-CA.crt"
+AWS_IOT_ROOT_CA = ""
 
 # Set the relative path to the AWS IoT Private Key file
-AWS_IOT_PRIVATE_KEY = "./fire-sensor.private.key"
+AWS_IOT_PRIVATE_KEY = ""
 
 # Set the relative path to the AWS IoT Certificate file
-AWS_IOT_CERTIFICATE = "./fire-sensor.cert.pem"
+AWS_IOT_CERTIFICATE = ""
 
 # For certificate based connection
 myMQTTClient = AWSIoTMQTTClient(AWS_IOT_CLIENT_ID)
