@@ -21,7 +21,7 @@ There are also the codes:
 * **Images Directory**, with all the images
 
 ## Video And Tutorial
-See the [Video](https://www.hackster.io/gobbatoriccardo96/fofides-forest-fire-detection-system-acda9b) on YouTube.
+See the [Video Presentation](https://youtu.be/uon6HLHgz9U) on YouTube.
 
 See the [Project Presentation](https://www.hackster.io/gobbatoriccardo96/fofides-forest-fire-detection-system-acda9b) on Hackster.io.
 
