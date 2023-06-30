@@ -104,6 +104,4 @@ Then, as before, with a proper AWS Lambda function and an IoT-Rule, the data sen
 
 ![website2](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/website2.png) <br>
 
-The website shows the data sent to AWS, in particular it tells what happens during the actual fire showing graphs about Flame, Carbon Monoxide and Temp. There are also some aggregated data like Average, Min and Max of all the data. Here it is a demonstration of website content:
-
-This is the link of the website: [Link Here](https://dev.d1x7cd5qytqbni.amplifyapp.com/)
+The website shows the data sent to AWS, in particular it tells what happens during the actual fire showing graphs about Flame, Carbon Monoxide and Temp. There are also some aggregated data like Average, Min and Max of all the data. Here it is a demonstration of website content.
