@@ -4,11 +4,7 @@ This file is for the future of the project: ideas and future applications, which
 
 ## Scalability of the Prototype using LoRa
 
-Starting from the small model of the infrastructure
-
-![scale1](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/scale1.png) <br>
-
-It is possible to scale the schema with more nodes. In the future the system, due to energy efficiency, will use LoRa Protocol. So in the next images, I will show the infrastructure with LoRa.
+Starting from the prototype, it is possible to scale the schema with more nodes. In the future the system, due to energy efficiency, will use LoRa Protocol. So in the next images, I will show the infrastructure with LoRa.
 
 ![scale2](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/scale2.png) <br>
  
