@@ -55,3 +55,7 @@ However, sometimes Wildfires do sometimes occur naturally, either ignited by the
 Some ecosystems were hit harder by nighttime activity than others. For instance, nighttime fire detections were dominant in temperate evergreen forests, where 38 percent of fire detections occurred at night. 
 
 ![fire-region](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/fire-region.jpeg) <br>
+
+### My solution
+
+The Project aims to develop an IoT-based forest fire alarm system that utilizes a network of strategically placed sensors to continuously monitor environmental factors. When a potential fire hazard is detected, the system will send real-time notifications to authorities, automate emergency protocols, enable remote monitoring, and enhance coordination of firefighting efforts. This comprehensive solution enhances fire detection capabilities and facilitates swift and targeted response to combat forest fires. 
