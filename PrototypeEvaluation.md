@@ -76,6 +76,9 @@ Here, on the contrary, there is an image to show the value received in a situati
 ![yes](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/yesflame.png) <br>
 
 #### MQ7 Sensor Calibration
+I have done some tests with the MQ7 Sensor, to control if and how works. Below there is an image in which there are the sensor and a burning paper. <br>
+
+![mq7](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/mq7_calibration.png) <br>
 
 ### Payload
 This is a typical payload {"flame":"0","co":"359","temp":"22"}. In this case, the total volume will be of about 41 Bytes.
