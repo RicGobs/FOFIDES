@@ -28,7 +28,7 @@ The values of the actual system, with which I have to compare, are:
 * Near real-time detection of fire, but it is not declared specifically
 * A satellite has a useful lifetime of between 5 and 15 years depending on the satellite
 
-### Daily and Seasonal analysis
+## Daily and Seasonal analysis
 From the data take before, I have observed that is not possible to set in a static way different analysis for the seasons. Indeed the forest fire are not linked anymore to the seasons. 
 
 It is possible to do some daily analysis observing the value of the temperature. Doing this, it is possible to understand a probabily of forest fire and beacuse of this, it is posssible to have a dynamic duty cicle, in which there are different sleep time:
@@ -83,7 +83,7 @@ To create a reliable architecture that allow a correct detection of the fire in 
 
 My test are done with the lighter so I will use the distance obtained by these tests to implement the infrastructure. 
 
-The detection distance of the flame of lighter is 100 cm if there is a fire around the sensor, while it is higher (up to 2 m) if it is up the sensor. 
+The detection distance of the flame of lighter is 100 cm if there is a fire around the sensor, while it is higher (up to 1 m) if it is up the sensor. 
 
 ![angle](https://github.com/RicGobs/Fire-Alarm-System/blob/main/images/angle1.png) <br>
 
@@ -105,11 +105,11 @@ This holds both for the MQTT Protocol and the LoRa Protocol.
 ### Latency with MQTT Protocol
 The end-to-end latency for data collection using MQTT can be summarized as follows:
 
-* Thing to MQTT Bridge (MQTT Protocol): the latency here is about 1-2 seconds
+* Thing to MQTT Bridge (MQTT Protocol): the latency here is about 1 seconds
 * MQTT Bridge to AWS IoT-Core: the latency in this stage is about 1-2 seconds
-* AWS IoT-Core to Website: here the latency is about 3-4 seconds
+* AWS IoT-Core to Website: here the latency is about 2-3 seconds
 
-So, on average, the latency is about 8 seconds.
+So, on average, the latency is max 6 seconds.
 
 ### Latency with LoRa Protocol
 The end-to-end latency for data collection using LoRa is defined by:
@@ -118,7 +118,7 @@ The end-to-end latency for data collection using LoRa is defined by:
 * TTN to AWS IoT-Core: here the latency is about 2-3 seconds
 * AWS IoT-Core to Website: the latency here is about 3-4 seconds
 
-So, on average, the latency is about 10 seconds.
+So, on average, the latency is max 10 seconds.
 
 ### Energy Performance with MQTT Protocol
 In this paragraph, there is the energy performance of only the Sensor Board which will be connected to a battery. The Actuator Board is connected via cables and also it consumes more or less depending on how many alarms there are.
@@ -208,4 +208,22 @@ So, 0.28 Wh is the consumption per day of the system. Again it is interesting to
 
 $$E_{tot} monthly = 0.28 Wh \cdot 30 days = 8.4 Wh $$ 
 
-The conclusion is that the bottleneck is the MQ7 Sensor which is extremely energy demanding.
+The conclusion is that the bottleneck is the MQ7 Sensor which is extremely energy demanding. 
+
+With a battery of 7,500mAh, the board can survive for 3 months (but this is not enough).
+
+A possible solution to the problem is to use the infrared flame sensor to detect the fires, and you use the MQ7 Sensor only during the fire to give fundamental data to the firefighter (air quality and quantity of Carbon Monoxide in particular). In this case there is a larger consumption of energy during the fires, but it is not important because, probably, with the high temperature and the fires, the board will be destroyed. 
+
+### Conclusions
+Before, I have suggested the actual solution (my competitor) and its strengths. I will compare the two solutions:
+
+* There are 22 m resolution for EFFIS; meanwhile for my system the resolution can be decided by the user, and the best detection is with a board every 2 m
+* Then there is near real-time detection for EFFIS (but there is not a specific time); while my system has a dynamic approach, and the smallest time is 5 minutes
+* A satellite has a useful lifetime of between 5 and 15 years depending on the satellite; the board I will use can have the same lifetime, but it is necessary to change the battery (actually you have to change the battery of each board every 3 months).
+
+So, to conclude:
+* My system has an higher resolution
+* The time of detection is similar (near real-time intended as 5-10 minutes)
+* For the life of the system, today, EFFIS is much more efficient.
+
+I will not consider the cost of the two infrastructure.
