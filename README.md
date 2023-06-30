@@ -20,6 +20,13 @@ There are also the codes:
 * **Code_MQTT_Python_Bridge Directory**, with the script for creating a MQTT Bridge
 * **Images Directory**, with all the images
 
+## Video And Tutorial
+See the [Video](https://www.hackster.io/gobbatoriccardo96/fofides-forest-fire-detection-system-acda9b) on YouTube.
+
+See the [Project Presentation](https://www.hackster.io/gobbatoriccardo96/fofides-forest-fire-detection-system-acda9b) on Hackster.io.
+
+See the [Tutorial](https://www.hackster.io/gobbatoriccardo96/build-an-iot-infrastructure-from-the-thing-to-aws-8f370b) on Hackster.io.
+
 ## Introduction of the problem
 Forest fires pose a significant danger to both human settlements and forest ecosystems worldwide, with their occurrence largely linked to human activities. While many plants and animals need and benefit from wildfires, climate change has left some ecosystems more susceptible to flames. Warmer temperatures have intensified drought and dried out forests.
 
