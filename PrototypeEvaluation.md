@@ -106,10 +106,10 @@ This holds both for the MQTT Protocol and the LoRa Protocol.
 The end-to-end latency for data collection using MQTT can be summarized as follows:
 
 * Thing to MQTT Bridge (MQTT Protocol): the latency here is about 1 seconds
-* MQTT Bridge to AWS IoT-Core: the latency in this stage is about 1-2 seconds
+* MQTT Bridge to AWS IoT-Core: the latency in this stage is about 2-3 seconds
 * AWS IoT-Core to Website: here the latency is about 2-3 seconds
 
-So, on average, the latency is max 6 seconds.
+So, on average, the latency is max 7 seconds.
 
 ### Latency with LoRa Protocol
 The end-to-end latency for data collection using LoRa is defined by:
