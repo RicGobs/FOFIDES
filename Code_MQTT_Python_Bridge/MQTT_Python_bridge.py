@@ -18,7 +18,7 @@ def on_message(_client, _userdata, message):
     # Parse the incoming JSON string into a dictionary
     payload = json.loads(message.payload)
 
-    if(payload['id']=='0'):
+    if(payload['id']=='1'):
         #Convert the resulting dictionary back into a JSON string
         json_payload = json.dumps({
         'Datetime': date,
@@ -27,14 +27,17 @@ def on_message(_client, _userdata, message):
         'Temp': payload['temp']
         })
 
-    # Topic will be MQTT_PUB_TOPIC_FIRE
-    topic = MQTT_PUB_TOPIC_FIRE
+        # Topic will be MQTT_PUB_TOPIC_FIRE
+        topic = MQTT_PUB_TOPIC_FIRE
 
-    success = myMQTTClient.publish(topic, json_payload, 0)
+        success = myMQTTClient.publish(topic, json_payload, 0)
 
-    time.sleep(5)
-    if(success):
-        print("published",json_payload)
+        time.sleep(5)
+        if(success):
+            print("published",json_payload)
+
+    elif (payload['id']=='0'):
+        print()
 
     
 # On connect subscribe to topic
@@ -67,7 +70,7 @@ MQTT_BROKER_CLIENT_ID = "broker"
 # AWS IoT settings
 AWS_IOT_ENDPOINT =""
 AWS_IOT_PORT = 8883
-AWS_IOT_CLIENT_ID = ""
+AWS_IOT_CLIENT_ID = "basicPubSub"
 
 # Set the relative path to the AWS IoT Root CA file
 AWS_IOT_ROOT_CA = ""
